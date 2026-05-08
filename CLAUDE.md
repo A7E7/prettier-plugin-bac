@@ -7,6 +7,17 @@ vscode-bac and rebuild.
 
 [vscode-bac]: https://github.com/A7E7/vscode-bac
 
+## Shared-state map (this repo's only sibling)
+
+| Touched in `vscode-bac`                    | Effect here                                                                  |
+|--------------------------------------------|------------------------------------------------------------------------------|
+| `lsp/src/script/**` (lexer/parser/AST/diagnostics) | `dist/` drifts — rerun `node scripts/build.js`                       |
+| `lsp/src/format/**` (formatter)            | `dist/` drifts — rerun `node scripts/build.js`                              |
+| Formatter output style (anything observable in formatted text) | `package.json` `version` bump (semver: patch=fix, minor=new style choice, major=breaking shape) + `CHANGELOG.md` (start one on first non-trivial change) |
+| `lsp/package.json` deps that affect the formatter at runtime | mirror in this repo's `peerDependencies` if it's a runtime dep        |
+
+Anything else lives in `vscode-bac` and doesn't touch this repo.
+
 ## Documentation update protocol
 
 | Change                                          | Update                                                              |
