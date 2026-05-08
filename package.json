@@ -1,0 +1,35 @@
+{
+  "name": "prettier-plugin-bac",
+  "version": "0.1.0",
+  "description": "Prettier plugin for Blueprint as Code (.bac) files. Opinionated, no config knobs.",
+  "keywords": [
+    "prettier",
+    "prettier-plugin",
+    "bac",
+    "blueprint",
+    "unreal",
+    "ue5"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/A7E7/vscode-bac/tree/main/prettier-plugin-bac",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/A7E7/vscode-bac.git",
+    "directory": "prettier-plugin-bac"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build.js"
+  },
+  "peerDependencies": {
+    "prettier": "^3.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.3"
+  }
+}
